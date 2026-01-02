@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Careers in 2026 Webinar Invitation</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f4f7f9;
+        padding: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+
+      .email-container {
+        max-width: 650px;
+        margin: 0 auto;
+        background-color: #ffffff;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .hero-section {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 40px 30px;
+        text-align: center;
+      }
+
+      .hero-section h1 {
+        font-size: 32px;
+        font-weight: 700;
+        margin-bottom: 15px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+      }
+
+      .hero-section p {
+        font-size: 16px;
+        line-height: 1.7;
+        margin-bottom: 10px;
+        opacity: 0.95;
+      }
+
+      .hero-section .highlight {
+        background-color: rgba(255, 255, 255, 0.2);
+        padding: 12px 20px;
+        border-radius: 8px;
+        margin-top: 20px;
+        font-weight: 600;
+        display: inline-block;
+      }
+
+      .content-section {
+        padding: 35px 30px;
+      }
+
+      .section-title {
+        font-size: 24px;
+        font-weight: 700;
+        color: #667eea;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        border-bottom: 3px solid #667eea;
+      }
+
+      .details-box {
+        background-color: #f8f9fa;
+        border-left: 4px solid #667eea;
+        padding: 20px;
+        margin-bottom: 30px;
+        border-radius: 6px;
+      }
+
+      .details-box p {
+        font-size: 16px;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+      }
+
+      .details-box p:last-child {
+        margin-bottom: 0;
+      }
+
+      .details-box strong {
+        color: #667eea;
+        min-width: 80px;
+        display: inline-block;
+      }
+
+      .speakers-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+        margin-bottom: 30px;
+      }
+
+      .speaker-card {
+        background-color: #f8f9fa;
+        padding: 20px;
+        border-radius: 8px;
+        border: 2px solid #e9ecef;
+        transition: all 0.3s ease;
+      }
+
+      .speaker-card:hover {
+        border-color: #667eea;
+        box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
+      }
+
+      .speaker-name {
+        font-size: 18px;
+        font-weight: 700;
+        color: #333;
+        margin-bottom: 5px;
+      }
+
+      .speaker-title {
+        font-size: 14px;
+        color: #666;
+        font-style: italic;
+      }
+
+      .highlights-list {
+        margin-bottom: 30px;
+      }
+
+      .highlight-item {
+        background-color: #fff;
+        border: 1px solid #e9ecef;
+        padding: 15px 18px;
+        margin-bottom: 12px;
+        border-radius: 8px;
+        font-size: 15px;
+        transition: all 0.3s ease;
+      }
+
+      .highlight-item:hover {
+        background-color: #f8f9fa;
+        border-color: #667eea;
+        transform: translateX(5px);
+      }
+
+      .highlight-item strong {
+        color: #667eea;
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      .cta-section {
+        text-align: center;
+        padding: 30px 0;
+        background-color: #f8f9fa;
+        border-radius: 8px;
+        margin: 30px 0;
+      }
+
+      .cta-button {
+        display: inline-block;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 16px 45px;
+        text-decoration: none;
+        border-radius: 30px;
+        font-size: 18px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+      }
+
+      .cta-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
+      }
+
+      .cta-note {
+        margin-top: 15px;
+        font-size: 14px;
+        color: #666;
+        font-style: italic;
+      }
+
+      .new-year-message {
+        background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+        padding: 20px;
+        border-radius: 8px;
+        text-align: center;
+        font-size: 16px;
+        font-weight: 600;
+        color: #333;
+        margin-top: 30px;
+      }
+
+      .footer-section {
+        background-color: #2c3e50;
+        color: white;
+        padding: 25px 30px;
+        text-align: center;
+        font-size: 14px;
+      }
+
+      .footer-section p {
+        margin-bottom: 8px;
+      }
+
+      .footer-section p:last-child {
+        margin-bottom: 0;
+      }
+
+      .poster-image {
+        width: 100%;
+        height: auto;
+        display: block;
+        margin-top: 20px;
+        border-radius: 8px;
+      }
+
+      @media (max-width: 600px) {
+        .hero-section h1 {
+          font-size: 26px;
+        }
+
+        .hero-section p {
+          font-size: 14px;
+        }
+
+        .content-section {
+          padding: 25px 20px;
+        }
+
+        .section-title {
+          font-size: 20px;
+        }
+
+        .cta-button {
+          padding: 14px 35px;
+          font-size: 16px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="email-container">
+      <!-- Hero Section -->
+      <div class="hero-section">
+        <h1>🤖 AI Careers in 2026</h1>
+        <p>
+          We are excited to share some great news with you! As we enter 2026,
+          the AI industry is set to offer new career paths, higher pay, and
+          massive growth — and we want you to be part of it.
+        </p>
+        <div class="highlight">
+          Join our FREE webinar to explore the future of AI careers!
+        </div>
+      </div>
+
+      <!-- Content Section -->
+      <div class="content-section">
+        <!-- Webinar Details -->
+        <h2 class="section-title">📅 Webinar Details</h2>
+        <div class="details-box">
+          <p><strong>Date:</strong> Monday, December 29, 2025</p>
+          <p><strong>Time:</strong> 7:00 - 8:00 PM IST</p>
+          <p><strong>Mode:</strong> Live Online Event (Zoom)</p>
+        </div>
+
+        <!-- Speakers -->
+        <h2 class="section-title">🎤 Meet Our Expert Speakers</h2>
+        <div class="speakers-grid">
+          <div class="speaker-card">
+            <div class="speaker-name">Yukti Basnet</div>
+            <div class="speaker-title">
+              AI/ML Domain, VP of Product & Engineering, TekBay Digital
+            </div>
+          </div>
+          <div class="speaker-card">
+            <div class="speaker-name">Sahil Oberoi</div>
+            <div class="speaker-title">Managing Director, TekBay Academy</div>
+          </div>
+        </div>
+
+        <!-- What We'll Cover -->
+        <h2 class="section-title">💡 What You'll Learn</h2>
+        <div class="highlights-list">
+          <div class="highlight-item">
+            <strong>🚀 The Future of AI Careers in 2026</strong>
+            Industry trends, predictions, and job market analysis
+          </div>
+          <div class="highlight-item">
+            <strong>🧠 Key Skills to Thrive in AI</strong>
+            High-demand AI skills that employers are looking for
+          </div>
+          <div class="highlight-item">
+            <strong>🌟 Career Pathways in AI</strong>
+            From Data Science to Machine Learning and beyond
+          </div>
+          <div class="highlight-item">
+            <strong>🎯 How to Get Started</strong>
+            Actionable steps and resources to jumpstart your AI career
+          </div>
+          <div class="highlight-item">
+            <strong>❓ Live Q&A Session</strong>
+            Get your questions answered by industry experts
+          </div>
+        </div>
+
+        <!-- Call to Action -->
+        <div class="cta-section">
+          <a
+            href="https://tekbay.academy/webinar"
+            target="_blank"
+            class="cta-button"
+          >
+            Register Now - It's FREE!
+          </a>
+          <p class="cta-note">
+            ⚠️ Seats are limited — don't miss out on this opportunity!
+          </p>
+        </div>
+
+        <!-- New Year Message -->
+        <div class="new-year-message">
+          🎉 Wishing you a Happy New Year 2026 in advance! 🎉
+        </div>
+
+        <!-- Event Poster -->
+        <img
+          src="cid:{{webinar_invitation_cid}}"
+          alt="AI Careers in 2026 Webinar"
+          class="poster-image"
+        />
+      </div>
+
+      <!-- Footer -->
+      <div class="footer-section">
+        <p><strong>Best regards,</strong></p>
+        <p>Cloud Apprenticeship Team</p>
+        <p>TekBay Academy</p>
+        <p>📞 +977 9801467706</p>
+      </div>
+    </div>
+  </body>
+</html>

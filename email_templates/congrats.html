@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Congratulations!</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+      }
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      .header {
+        background-color: #4caf50;
+        color: white;
+        padding: 20px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>Congratulations, {{ company_name }}!</h1>
+      </div>
+      <div class="content">
+        <p>Dear {{ company_name }},</p>
+        <p>{{ message }}</p>
+        <img src="cid:{{ congrats_image_cid }}" />
+
+        <p>We're proud of your achievement!</p>
+        <p>
+          Best regards,<br />
+          <strong>{{ sender_name }}</strong><br />
+          {{ sender_email }}
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

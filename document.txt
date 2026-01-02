@@ -1,0 +1,5 @@
+templates/inline api docs: https://.postman.co/workspace/scatch~13e97408-b44c-428e-9570-abbe249dedad/folder/32359332-5e3fe4a5-0641-44d0-9161-e660af0d6cc7?action=share&creator=32359332
+templates/mailType api docs : https://.postman.co/workspace/scatch~13e97408-b44c-428e-9570-abbe249dedad/folder/32359332-df36c583-0441-4cc8-a83d-e8fff84297b4?action=share&creator=32359332
+
+templates/template api docs : https://.postman.co/workspace/scatch~13e97408-b44c-428e-9570-abbe249dedad/folder/32359332-bb8104ef-2af2-4f7a-8377-c915d8a7aabf?action=share&creator=32359332
+
