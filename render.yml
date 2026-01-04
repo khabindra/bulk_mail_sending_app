@@ -9,7 +9,7 @@ services:
     plan: free
     name: mysite
     runtime: python
-    buildCommand: './build.sh'  # Ensure this script is executable
+    buildCommand: './build.sh'
     startCommand: 'gunicorn dynamic_mail_services.wsgi:application'
     envVars:
       - key: DATABASE_URL
@@ -20,17 +20,21 @@ services:
         generateValue: true
       - key: WEB_CONCURRENCY
         value: 4
-  
-  - type: backgroundWorker  # ADD THIS
-    name: mysite-celery
+      - key: CELERY_BROKER_URL    # ADD THIS to web service too
+        fromDatabase:
+          name: redis_broker_mail  # ← CORRECT NAME
+          property: connectionString
+
+  - type: backgroundWorker
+    name: mysite-celery          # Better name than redis_broker_mail
     runtime: python
     plan: free
-    buildCommand: './build.sh'  # Or simplified: 'pip install -r requirements.txt'
+    buildCommand: './build.sh'
     startCommand: 'celery -A dynamic_mail_services worker --loglevel=info'
     envVars:
       - key: CELERY_BROKER_URL
         fromDatabase:
-          name: your-redis  # Reference your existing Redis Key Value
+          name: redis_broker_mail  # ← FIXED: Your actual Redis name
           property: connectionString
       - key: DATABASE_URL
         fromDatabase:
