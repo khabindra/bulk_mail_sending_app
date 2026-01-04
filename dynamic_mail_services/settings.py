@@ -144,6 +144,8 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'mailings/static'),  # Path to your static files directory
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+# Admin-specific static files
+ADMIN_STATIC_URL = STATIC_URL + 'admin/'
 
 # WhiteNoise configuration
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
