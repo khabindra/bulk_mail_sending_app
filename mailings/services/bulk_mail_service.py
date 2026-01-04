@@ -125,7 +125,7 @@ from django.db import transaction
 from mailings.models import MailLog
 from mailings.services.email_sender import send_email
 from mailings.services.context_builder import build_email_context
-from celery import shared_task
+# from celery import shared_task
 
 from client.models import Client
 from templates.models import MailType, EmailTemplate
@@ -134,13 +134,13 @@ from mailings.models import SenderEmail
 logger = logging.getLogger(__name__)
 
 
-@shared_task(
-    bind=True,
-    autoretry_for=(Exception,),
-    retry_kwargs={"max_retries": 5},
-    retry_backoff=10,
-    retry_jitter=True,
-)
+# @shared_task(
+#     bind=True,
+#     autoretry_for=(Exception,),
+#     retry_kwargs={"max_retries": 5},
+#     retry_backoff=10,
+#     retry_jitter=True,
+# )
 def send_bulk_mails(
     self,
     client_ids,
