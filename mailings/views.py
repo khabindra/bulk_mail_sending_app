@@ -182,10 +182,17 @@ class AdminBulkMailWithInlineImageAPIView(APIView):
     permission_classes = [IsAuthenticated, IsAdminUserRole]
 
     def post(self, request):
-        serializer = AdminBulkMailSerializer(data=request.data)
+        
+        serializer = AdminBulkMailSerializer(
+            data=request.data,
+            context={"request": request}  # 🔥 REQUIRED
+        )
+
         serializer.is_valid(raise_exception=True)
 
         data = serializer.validated_data
+        dynamic_vars = data.get("dynamic_vars", {})
+
         client_ids = parse_client_ids(data["client_id"])
 
         clients = Client.objects.filter(id__in=client_ids, is_active=True)
@@ -223,7 +230,8 @@ class AdminBulkMailWithInlineImageAPIView(APIView):
             attachments=attachments,
             # NEW ARGUMENTS:
             user_id=current_user_id,
-            campaign_name=data.get('campaign_name', '') # Optional: Add a field in serializer for this
+            campaign_name=data.get('campaign_name', ''), # Optional: Add a field in serializer for this
+            dynamic_vars=dynamic_vars   # 🔥 NEW
         )
 
         return Response({

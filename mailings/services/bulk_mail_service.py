@@ -152,7 +152,8 @@ def send_bulk_mails(
     inline_images,
     attachments,
     user_id=None,         # NEW: Track who sent it
-    campaign_name=None    # NEW: Track campaign name
+    campaign_name=None,    # NEW: Track campaign name
+    dynamic_vars=None,   # 🔥 NEW
 ):
     clients = Client.objects.filter(id__in=client_ids, is_active=True)
     mail_type = MailType.objects.get(id=mail_type_id)
@@ -164,7 +165,7 @@ def send_bulk_mails(
     for client in clients:
         try:
             with transaction.atomic():
-                context = build_email_context(client, sender, message, {})
+                context = build_email_context(client, sender, message, request_data=dynamic_vars)
 
                 # 🔥 THIS IS REQUIRED (Inline Images Context)
                 for cid in inline_images.keys():

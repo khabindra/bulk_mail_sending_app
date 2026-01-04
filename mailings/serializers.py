@@ -34,29 +34,6 @@ class MailLogDetailSerializer(serializers.ModelSerializer):
             return SenderEmailSerializer(obj.sender_email).data
         return None
 
-# class AdminBulkMailSerializer(serializers.Serializer):
-#     # IMPROVEMENT: Tighten validation. client_id should likely be an Integer or a CSV string.
-#     # Assuming CSV string based on your view logic.
-#     client_id = serializers.CharField(help_text="Comma separated IDs or single ID")
-#     mail_type_id = serializers.IntegerField()
-#     sender_id = serializers.IntegerField()
-#     subject = serializers.CharField(required=False, allow_blank=True)
-#     message = serializers.CharField(required=False, allow_blank=True)
-    
-#     attachment_ids = serializers.ListField(
-#         child=serializers.IntegerField(),
-#         required=False
-#     )
-#     def validate_client_id(self, value):
-#         """Ensure client_ids are integers"""
-#         try:
-#             # Basic validation logic can go here, or leave it to the view
-#             return value
-#         except ValueError:
-#             raise serializers.ValidationError("Invalid ID format.")
-
-
-
 # serializers.py
 class AdminBulkMailSerializer(serializers.Serializer):
     # campaign_name is new updated one-------------------------
@@ -84,6 +61,20 @@ class AdminBulkMailSerializer(serializers.Serializer):
         if not MailType.objects.filter(id=value).exists():
             raise serializers.ValidationError("Invalid mail_type_id")
         return value
+    
+    # 🔥 ACCEPT ANY EXTRA var_* FIELDS
+    def validate(self, attrs):
+        request = self.context["request"]
+        if not request:
+            return attrs
+        dynamic_vars = {}
+
+        for key, value in request.data.items():
+            if key.startswith("var_"):
+                dynamic_vars[key.replace("var_", "")] = value
+
+        attrs["dynamic_vars"] = dynamic_vars
+        return attrs
     
 
 

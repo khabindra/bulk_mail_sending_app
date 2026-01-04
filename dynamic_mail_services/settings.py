@@ -95,27 +95,27 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'dynamic_mail_services.wsgi.application'
 
-import dj_database_url
+# import dj_database_url
 
-DATABASE_URL = os.environ.get('DATABASE_URL') 
+# DATABASE_URL = os.environ.get('DATABASE_URL') 
 
-if DATABASE_URL:
-    DATABASES = {
-        'default': dj_database_url.config(
-            default=DATABASE_URL,
-            conn_max_age=600
-        )
-    }
-else:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': BASE_DIR / 'db.sqlite3',
-            'OPTIONS': {
-                'timeout': 10000,  # in milliseconds
-            }
+# if DATABASE_URL:
+#     DATABASES = {
+#         'default': dj_database_url.config(
+#             default=DATABASE_URL,
+#             conn_max_age=600
+#         )
+#     }
+# else:
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+        'OPTIONS': {
+            'timeout': 10000,  # in milliseconds
         }
     }
+}
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -173,7 +173,8 @@ MEDIA_URL = '/media/'
 
 # settings.py
 # 'redis://localhost:6379/0'
-REDIS_URL = config('REDIS_URL')
+# REDIS_URL = config('REDIS_URL')
+REDIS_URL='redis://localhost:6379/0'
 CELERY_BROKER_URL = REDIS_URL
 CELERY_RESULT_BACKEND = REDIS_URL
 
