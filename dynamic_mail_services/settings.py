@@ -15,7 +15,7 @@ RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
 ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 if RENDER_EXTERNAL_HOSTNAME:
     ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
-# DEBUG = True
+DEBUG = True
 # ALLOWED_HOSTS = []
 
 
@@ -178,13 +178,11 @@ MEDIA_URL = '/media/'
 
 
 # settings.py
-# 'redis://localhost:6379/0'
-
 # REDIS_URL='redis://localhost:6379/0'
 # Redis and Celery configuration
 REDIS_URL = os.environ.get('REDIS_URL')
-CELERY_BROKER_URL = os.environ.get('CELERY_BROKER_URL')
-CELERY_RESULT_BACKEND = os.environ.get('CELERY_RESULT_BACKEND')
+CELERY_BROKER_URL = os.environ.get('REDIS_URL')
+CELERY_RESULT_BACKEND = os.environ.get('REDIS_URL')
 
 # CELERY_RESULT_BACKEND = 'django-db'  # Using Django database as the backend
 # CELERY_RESULT_DB_TABLE = 'django_celery_results'  # Table name for storing results

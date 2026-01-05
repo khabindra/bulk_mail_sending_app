@@ -219,7 +219,7 @@ class AdminBulkMailWithInlineImageAPIView(APIView):
         # Get User ID from the authenticated request
         current_user_id = request.user.id
 
-        results = send_bulk_mails(
+        results = send_bulk_mails.delay(
             client_ids=list(clients.values_list("id", flat=True)),
             mail_type_id=mail_type.id,
             email_template_id=email_template.id,
