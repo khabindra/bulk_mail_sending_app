@@ -12,7 +12,7 @@ env/
 .env
 
 # Static files generated locally
-staticfiles/
+# staticfiles/
 
 # Media files uploaded by users (if any)
 # Uncomment the following line if you want to ignore media uploads during development
